@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Height and Age Calculator</title>
+    <style>
+        body{font-family:Arial,Helvetica,Sans-serif;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 10%;
+            padding: 0;}
+    
+        .navbar a{float:right;
+            padding:12px;
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+        }
+        .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: hsl(318, 49%, 62%);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(189, 8, 8, 0.852);
+    margin-top: 100px;
+}
+    
+    .navbar a:hover{background-color:hsl(318, 100%, 75%);}
+    
+    .active{background-color:#73fdb1d0;}
+    
+    
+    @media screen and(max-width:500px){.navbar a{float:none;display:block}}
+        
+      </style>
+          
+          <body>
+            <div class="navbar">
+                <a href="/home">home</a>
+                <a href="/login">Login</a>
+                <a href="/search">search</a>
+                <a href="/details">details</a>
+                <a href="/contact">Contact</a>
+                <a href="/diet">diet</a>
+                <a href="/signup">sign up</a>
+                <a href="/exercises">exercises</a>
+            </div>
+              
+      </body>
+    <script>
+        function calculateAge() {
+            var birthdate = document.getElementById("birthdate").value;
+            var birthYear = new Date(birthdate).getFullYear();
+            var currentYear = new Date().getFullYear();
+            var age = currentYear - birthYear;
+            document.getElementById("age").innerHTML = "Your age is: " + age + " years";
+        }
+
+        // Define a function for height calculation
+        function calculateHeight() {
+            var height = document.getElementById("height").value;
+            // Add your height calculation logic here if needed
+            document.getElementById("heightResult").innerHTML = "Your height is: " + height + " cm";
+        }
+        function calculateWeight() {
+            var Weight = document.getElementById("Weight").value;
+            document.getElementById("WeightResult").innerHTML = "Your Weight is: " + Weight + " kg";
+        }
+    </script>
+</head>
+<body style="background-image: linear-gradient(rgb(124, 240, 242),black);">
+    <h2 align="center" style="font-size:50px; text-decoration: underline; ">DETAILS</h2>
+    <div class="container">
+        <div align="center">
+    <h1 style="margin-right: 400px;">Height</h1>
+    <form>
+        <label for="height">Enter your height (in centimeters): </label>
+        <input type="number" id="height" name="height">
+        <button type="button" onclick="calculateHeight()">Submit</button>
+        <p id="heightResult"></p> <!-- Display height result here -->
+    </form>
+    <div>
+    <h1 style="margin-right: 400px;">Age</h1>
+    <label for="birthdate" style="margin-right: 350px;">Enter your birthdate:</label>
+    <div>
+    <input type="date" id="birthdate"style="margin-right: 5px;"  >
+    <button onclick="calculateAge()">Submit</button>
+    </div>
+    <p id="age"></p> <!-- Display age result here -->
+</div>
+<div>
+    <h1 style="margin-right: 350px;">Gender</h1>
+    <label style="margin-right: 390px;">Gender:</label>
+</div>
+    <input type="checkbox" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="checkbox" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="checkbox" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+    <div>
+        <h1 style="margin-right: 350px;">Weight</h1>
+        <label style="margin-right: 390px;">Weight:</label>
+    </div>
+    <form>
+        <label for="height">Enter your Weight(in kg): </label>
+        <input type="number" id="Weight" name="Weight">
+        <button type="button" onclick="calculateWeight()">Submit</button>
+        <p id="WeightResult"></p>
+    </form>     
+</div>
+</div>
+</body>
+</html>
